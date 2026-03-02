@@ -1,21 +1,27 @@
 # This module contains functions to process student data.
+# I'm learning how to format strings and display information
 
 def format_student_data(student):
     """
-    Format student data for display.
-    The function should return a formatted string containing:
-    - Student ID
-    - Student Name
-    - Major
-    such as: "ID: 10 | Name: Louis Medina | Major: Computer Science"
+    This function formats student data to look nice when printed.
+    It takes a student tuple and makes it into a readable string.
     """
-    student_id, name, major = student
-    return f"ID: {student_id} | Name: {name} | Major: {major}"
+    # Unpacking the tuple into separate variables
+    student_id = student[0]
+    name = student[1]
+    major = student[2]
+    
+    # Using f-string to format the output nicely
+    formatted_string = f"ID: {student_id} | Name: {name} | Major: {major}"
+    return formatted_string
 
 def display_students(student_list):
     """
-    Display all student records.
-    Loop through the student_list and print each student using format_student_data().
+    This function shows all the students in the list.
+    It goes through each student and prints their information.
     """
+    # Loop through each student in the list
     for student in student_list:
-        print(format_student_data(student))
+        # Format the student data and print it
+        student_info = format_student_data(student)
+        print(student_info)
